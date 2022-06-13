@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
+import { DetalheAnimalComponent } from './detalhe-animal/detalhe-animal.component';
 
 const routes: Routes = [
   {
     path: '',
     component: ListaAnimaisComponent,
   },
+  {
+    // rota variavel
+    path: ':animalId',
+    component: DetalheAnimalComponent 
+  }
 ];
 
 @NgModule({
