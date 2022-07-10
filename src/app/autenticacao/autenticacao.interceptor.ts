@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenService } from './token.service';
+import { HttpHeaders } from '@angular/common/http';
 
 
 // Interceptor é um serviço que implementa a interface HttpInterceptor
@@ -21,8 +22,8 @@ export class AutenticacaoInterceptor implements HttpInterceptor {
 
     if (this.tokenService) {
       const token = this.tokenService.retornaToken();
-      const headers = new Headers().append('x-access-token', token);
-      request = request.clone({ headers });
+      const headers = new HttpHeaders().append('x-access-token', token);
+      request = request.clone({headers});
     }
 
     return next.handle(request);
