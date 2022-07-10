@@ -36,7 +36,7 @@ export class AnimaisService {
     return this.http.delete<Animal>(`${API}/photos/${id}`);
   }
 
-  curtir(id: boolean): Observable<boolean> {
+  curtir(id: number): Observable<boolean> {
     // pipe: manipular o fluxo da requisicao;
     // terceiro parametro do post - { oberserve: 'response' }: retorna o status da requisição
     return this.http
