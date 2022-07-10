@@ -39,11 +39,12 @@ export class AnimaisService {
   curtir(id: boolean): Observable<boolean> {
     // pipe: manipular o fluxo da requisicao;
     // terceiro parametro do post - { oberserve: 'response' }: retorna o status da requisição
-    return this.http.post(`${API}/photos/${id}/likes`, {}, { observe: 'response' }).pipe(
+    return this.http
+      .post(`${API}/photos/${id}/like`, {}, { observe: 'response' }).pipe(
       // mapTo: emite o valor passado por parametro
       mapTo(true),
-      catchError(error => {
-        return error.status == NOT_MODIFIED ? of() : throwError(error);
+      catchError((error) => {
+        return error.status === NOT_MODIFIED ? of(false) : throwError(error);
       })
     )
   }
