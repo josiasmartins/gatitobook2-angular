@@ -1,4 +1,4 @@
-<!-- atribuir o valor da observle dentro da variavel comentario -->
+<!-- atribuir o valor da observable dentro da variavel comentario -->
 <div *ngIf="comentarios$ | async as commentarios">
   <ul class="list-unstyled">
     <li *ngFor="let comentario of comentarios">
@@ -24,7 +24,7 @@
       <!-- !!: transforma em boolean -->
       <app-mensagem
         mensagem="Tamanho máximo de 300 caracteres"
-        *ngIf="!!comentarioForm.get('comentario')?.errors?.maxlength"
+        *ngIf="!!comentarioForm.get('comentario')?.errors?.maxLength"
       ></app-mensagem>
 
     </form>
