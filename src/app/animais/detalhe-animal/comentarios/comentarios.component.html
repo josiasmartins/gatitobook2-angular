@@ -1,1 +1,32 @@
-<p>comentarios works!</p>
+<!-- atribuir o valor da observle dentro da variavel comentario -->
+<div *ngIf="comentarios$ | async as commentarios">
+  <ul class="list-unstyled">
+    <li *ngFor="let comentario of comentarios">
+      <p class="text-dart font-weight-bold mr-1">{{ commentario.userName }}</p>
+      <!-- pipe date: pipe de formatação de horas -->
+      <em>{{ comentario.date | date: "dd-MM-yyyy HH:mm" }}</em>
+      <p class="break-word mb-2">{{ comentario.text }}</p>
+    </li>
+  </ul>
+
+  <div class="mt-4">
+    <form [formGroup]="comentarioForm" (submit)="gravar()">
+      <div class="input-group">
+        <textarea class="form-control" formControlName="comentario">
+          <div class="input-group-append">
+            <button
+              [disable]="comentarioForm.invalid"
+              class="btn btn-primary pull-left"
+            >Publicar</button>
+          </div>
+        </textarea>
+      </div>
+      <!-- !!: transforma em boolean -->
+      <app-mensagem
+        mensagem="Tamanho máximo de 300 caracteres"
+        *ngIf="!!comentarioForm.get('comentario')?.errors?.maxlength"
+      ></app-mensagem>
+
+    </form>
+  </div>
+</div>
