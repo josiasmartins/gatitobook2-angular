@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'novo',
     component: NovoAnimalComponent
-  }
+  },
   {
     // rota variavel
     path: ':animalId',
