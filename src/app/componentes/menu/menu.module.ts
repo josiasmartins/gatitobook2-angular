@@ -8,7 +8,6 @@ import { MenuComponent } from './menu.component';
   declarations: [MenuComponent],
   imports: [
     CommonModule,
-    MenuComponent
   ],
   exports: [
     MenuComponent
