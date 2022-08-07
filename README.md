@@ -1,7 +1,7 @@
 # Gatitobook part 2
 
 ## demo
-![demo](./src/assets/);
+![demo](./src/assets/gatito-2.webm);
 
 ## [api-gatito](https://github.com/josiasmartins/api-gatitobook-nodeJs);
 
