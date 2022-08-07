@@ -48,4 +48,17 @@ export class AnimaisService {
       })
     )
   }
+
+  upload(descricao: string, permiteComentario: boolean, arquivo: File) {
+    // FormData: service do javascript que empacota para biário na requisição
+    const formData = new FormData();
+    formData.append("descricao", descricao);
+    formData.append("allowComments", permiteComentario ? "true" : "false");
+    formData.append("imageFile", arquivo );
+
+    return this.http.post(`${API}/photos/upload`, formData, {
+      observe: "events",
+      reportProgress: true
+    })
+  }
 }
