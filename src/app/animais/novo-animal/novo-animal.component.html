@@ -1,6 +1,6 @@
 <div class="container">
   <form
-    [formGroup]="formularioAnimal"
+    [formGroup]="formalarioAnimal"
     class="row"
     (submit)="upload()"
   >
@@ -24,7 +24,7 @@
         >
         <app-mensagem
           mensagem="Please select a photo"
-          *ngIf="!!formularioAnimal.get('file')?.errors?.required"
+          *ngIf="!!formalarioAnimal.get('file')?.errors?.required"
         ></app-mensagem>
       </div>
       <ng-template #previewImage>
@@ -43,7 +43,7 @@
         ></textarea>
         <app-mensagem
           mensagem="tamanho máximo do campo é 300 caracteres"
-          *ngIf="!!formularioAnimal.get('description')?.errors?.maxlength"
+          *ngIf="!!formalarioAnimal.get('description')?.errors?.maxlength"
         ></app-mensagem>
       </div>
 
@@ -56,10 +56,10 @@
 
       <div *ngIf="!percentualConcluido; else uploaddiv">
         <button
-          [disabled]="formularioAnimal.invalid"
+          [disabled]="formalarioAnimal.invalid"
           type="submit"
           class="btn btn-primary btn-block"
-        ></button>
+        >Enviar</button>
 
         <a routerLink="['animais']" class="btn btn-secondary btn-block">Cancelar</a>
       </div>

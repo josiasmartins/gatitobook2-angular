@@ -23,7 +23,7 @@ export class NovoAnimalComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.formBuilder.group({
+    this.formalarioAnimal = this.formBuilder.group({
       // file: primeiro campo
       file: ['', Validators.required],
       description: ['', Validators.maxLength(300)],
