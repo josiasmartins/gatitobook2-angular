@@ -1,9 +1,20 @@
 # Gatitobook part 2
 
 ## demo
-![demo](./src/assets/);
+![demo](./src/assets/gatito-2.gif)
 
 ## [api-gatito](https://github.com/josiasmartins/api-gatitobook-nodeJs);
+
+
+### tools usage and building with: 
+  - Angular 11
+  - nodeJs 12
+  - http-server
+  - jwt-decode 3
+  - bootstrap 4.5
+  - font-awesome 4.7
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.0.
 
